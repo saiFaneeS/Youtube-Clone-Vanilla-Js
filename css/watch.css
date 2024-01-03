@@ -1,0 +1,445 @@
+* {
+  /* outline: 1px solid rgba(0, 255, 0, 0.445); */
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
+main {
+  padding: 0 8%;
+  width: 100%;
+  margin-top: 5em;
+  gap: 10px;
+}
+
+.watch-container {
+  display: flex;
+  align-items: start;
+  gap: 1em;
+} 
+
+.video-section {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.video-container iframe {
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#video-glow {
+  position: absolute;
+  width: 100%;
+  height: 150vh;
+  top: -10%;
+  left: 0;
+  z-index: -100;
+  background: radial-gradient(rgba(255, 255, 255, 0.0532), transparent);
+}
+
+.video-title {
+  margin-top: 14px;
+  margin-bottom: 14px;
+  font-size: 20px;
+}
+
+.video-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.channel-info {
+  display: flex;
+  gap: 1em;
+  & div {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  & .channel-text-info {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+.channel-logo-container {
+  height: 2.5em;
+  width: 2.5em;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: none;
+}
+
+.channel-logo-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.channel-name {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.channel-subscribers-count {
+  color: #aaa;
+  font-size: 14px;
+}
+
+#subscribe-btn {
+  color: #222;
+  background-color: #fff;
+  margin-left: 10px;
+  height: 36px;
+  padding: 16px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  border-radius: 4em;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: none;
+}
+
+#subscribe-btn:hover {
+  background-color: #ddd;
+}
+
+.video-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.video-action-buttons button {
+  padding: 0 16px;
+  height: 36px;
+  border-radius: 4em;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #aaa;
+  fill: #aaa;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.video-action-buttons button:hover {
+  background-color: #333;
+}
+
+.joined-btns {
+  display: flex;
+  gap: 0;
+}
+
+#like-btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  position: relative;
+  & svg {
+    rotate: 180deg;
+  }
+}
+
+#like-btn::after {
+  content: "";
+  background: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  right: 0;
+  top: 6px;
+  width: 1px;
+  height: 24px;
+}
+
+#dislike-btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.description {
+  background-color: #282828;
+  padding: 0.8em 1em;
+  border-radius: 1em;
+  margin: 1em 0;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  line-height: 2em;
+  & p {
+    font-size: 0.9em;
+  }
+}
+
+.description:hover {
+  background-color: #333;
+}
+
+.desc-vid-views {
+  font-weight: 600;
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.desc-vid-uploaded {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.comments-section {
+}
+
+.comments-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin: 2em 0;
+  & span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    & svg {
+      fill: #fff;
+    }
+  }
+}
+
+.add-comment {
+  display: flex;
+  align-items: start;
+}
+
+.comment-pfp {
+  height: 2.5em;
+  width: 2.5em;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.comment-pfp img {
+  height: 100%;
+  width: 100%;
+}
+
+.add-comment input {
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 0.9em;
+  color: #fff;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 8px;
+}
+
+.add-comment input:focus {
+  border-color: #fff;
+}
+
+/* RECOMMENDED LIST */
+
+.recommendations-section {
+  margin-left: 1em;
+  min-width: 30%;
+}
+
+.recommended-video {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  cursor: pointer;
+}
+
+.thumbnail-container {
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  border-radius: 8px;
+  min-width: 150px;
+  max-width: 190px;
+  height: 85px;
+  margin-right: 12px;
+}
+
+.thumbnail-container:before {
+  content: "";
+  display: block;
+}
+
+.thumbnail-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.recommended-video-info {
+  cursor: pointer;
+}
+
+.recommended-video-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.recommended-channel-name {
+  color: #aaaaaa;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.rec-video-detail {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recommended-video-views {
+  color: #aaa;
+  font-size: 12px;
+  width: 100%;
+}
+
+.recommended-uploaded-timeago {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.recommended-uploaded-timeago::before {
+  content: "• ";
+}
+
+@media screen and (width <= 770px) {
+  main {
+    flex-direction: column;
+  }
+  .recommendations-section {
+    margin-top: 1em;
+    margin-left: 0;
+  }
+}
+
+.loading-thumbnail {
+  background-color: #333;
+  height: 12em;
+  width: 100%;
+}
+
+.loading-video-text {
+  color: transparent;
+  background-color: #333;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 8px;
+  max-height: 1.1em;
+}
+
+.shine {
+  height: 140%;
+  width: 5em;
+  background-color: #555;
+  filter: blur(40px);
+  position: absolute;
+  top: -20%;
+  left: 150%;
+  transition: 0.3s ease;
+  animation: shine 1s linear infinite;
+  animation-delay: 0;
+}
+
+@keyframes shine {
+  0% {
+    left: -140%;
+  }
+  50% {
+    left: 130%;
+  }
+}
+
+.comment {
+  display: flex;
+  align-items: start;
+  margin: 1.5em 0;
+  & .comment-user-img {
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+    background-color: #333;
+  }
+  .comment-user-img img {
+    height: 100%;
+    width: 100%;
+  }
+  .comment-author {
+    font-weight: 600;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  .comment-published-at {
+    font-weight: 500;
+    color: #555;
+    font-size: 12px;
+  }
+  .comment-content {
+    margin-top: 10px;
+    font-size: 1em;
+  }
+}
+
+#sort-comments-btn {
+  position: relative;
+  display: none;
+}
+
+.sort-comments-modal {
+  position: absolute;
+  top: calc(100% + 4px);
+  background-color: #212121;
+  padding: 8px 0;
+  border-radius: 6px;
+  text-wrap: nowrap;
+  & li {
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+  & li:hover {
+    background-color: #4d4d4d;
+  }
+}
